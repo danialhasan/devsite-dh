@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+
+/*
+ I spend 3 hours debugging why the fonts weren't loading.
+ It's because the URL part in src was covered in '' when it shouldn't have been.
+ */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(../fonts/SF-Pro-Display-Bold.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Arima Madurai';
+    src: url(../fonts/ArimaMadurai-Bold.ttf) format('ttf');
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap'); */
+@tailwind utilities;

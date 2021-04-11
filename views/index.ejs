@@ -1,0 +1,369 @@
+<nav class="w-full h-auto pt-12 xl:pt-0 flex justify-between px-5">
+    <div class="xl:hidden font-bold font-sans text-lg dark:text-white-1 xl:mt-12">Danial Hasan</div>
+    <!-- ^ 'logo' -->
+    <div id="mobile_menu"
+        class="hidden z-10 fixed top-0 left-0 w-full h-full bg-white bg-opacity-10 text-black-1 dark:text-white-1"
+        style="backdrop-filter: blur(15px);" onclick="toggleMenu()">
+        <h2 class="mt-36 mb-8 font-sans text-5xl font-bold underline text-center ">Quick Links</h2>
+        <ul id="mobile_menu_list" class=" text-center font-semibold mb-12 text-4xl ">
+            <li class="py-2 navListChild active:underline">
+                <a href="#form_container">Contact</a>
+            </li>
+            <li class="py-2 navListChild active:underline"> <a href="#projects_section">Projects</a>
+            </li>
+            <li class="py-2 navListChild active:underline"><a href="#skillset_section">Skillset</a></li>
+            <li class="py-2 navListChild active:underline"><a href="#projects_section">Resume</a></li>
+            <li><i id="toggle_light_settings" class="mt-2 fas fa-swatchbook" onclick="toggleLightSettings()"></i></li>
+        </ul>
+    </div>
+    <div id="desktop_menu" class="hidden xl:flex items-center px-12  w-full h-28 justify-between dark:text-white-1 ">
+        <div class="font-bold font-sans text-lg "><a href="#">Danial Hasan</a></div>
+        <div class="flex w-auto h-full ">
+            <ul class="inline-flex justify-around items-center text-lg font-bold">
+
+                <li class="ml-14"><a href="#form_container" onclick="autofocusForm()">Contact</a></li>
+                <li class="ml-14"><a href="#projects_section">Projects</a></li>
+                <li class="ml-14"><a href="#skillset_section">Skillset</a></li>
+                <li class="ml-14"><a href="#projects_section">Resume</a></li>
+                <li><i id="toggle_light_settings" class="cursor-pointer ml-14 fas fa-swatchbook fa-lg"
+                        onclick="toggleLightSettings()"></i>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="xl:hidden transform transition-all z-50 ">
+        <img id="menu_button" aria-label="menu" src="./assets/menu_dark.svg" alt="Menu Button" onclick="toggleMenu()">
+        <!-- TODO: Switch the src attr of this with the dark mode menu, when dark mode is activated. -->
+    </div>
+</nav>
+<header class="text-black-2 dark:text-white-1">
+    <h1 class="font-bold font-sans text-5xl text-center mt-32 lg:text-6xl ">I'm Danial.</h1>
+    <h3 class="font-bold font-sans text-2xl text-center my-5">I'm a full stack <br class="lg:hidden"> web developer.
+    </h3>
+
+    <div class="my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
+        <button class="mx-auto w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
+        to-accent-1 text-2xl text-white-1 rounded-xl">
+            Contact Me
+        </button>
+        <button class="mx-auto w-44 h-16 mt-2 lg:my-0 lg:mx-2 border-accent-1 border-2 text-2xl text-black-2 rounded-xl flex justify-center
+            items-center">
+            <span class=" w-5 h-5 mr-2">
+                <img id="resume_download_icon_1" src="./assets/download_light.svg" alt="Download Resume icon" srcset="">
+            </span>
+            <p class="text-black-2 dark:text-white-1">Resume</p>
+        </button>
+    </div>
+    <div class="flex w-full mt-8 justify-center h-auto items-center">
+        <h3 class="font-serif text-md uppercase">available</h3>
+        <span class="ml-2 w-4 h-4 rounded-full bg-neon-green filter blur-lg drop-shadow-2xl"></span>
+        <!-- TODO: Blur the drop shadow of this green light.  -->
+    </div>
+</header>
+<div id="projects_section" class="w-full mb-12 h-auto text-black-2 dark:text-white-1">
+    <h2 class="mt-12 mb-8 text-center font-semibold text-4xl ">Projects</h2>
+    <div
+        class="flex px-4 flex-col w-full h-auto lg:max-w-screen-lg lg:mx-auto lg:flex-row lg:flex-wrap lg:justify-center lg:px-0">
+        <div
+            class="my-3 flex-col w-full md:mx-auto md:max-w-screen-sm lg:w-96 lg:my-8 lg:mx-7 h-72 bg-white-2 border-black border-2 dark:bg-black-2 dark:border-white">
+            <div class="w-full pt-4 h-1/2 md:text-center">
+                <div class="px-6 w-full h-auto">
+                    <h4 class="font-semibold text-2xl">linktosite.com</h4>
+                </div>
+                <div class="px-6 w-full h-auto">
+                    <p class=" my-4 font-regular text-md">
+                        A web app built for a business
+                        serving the {{  niche }}.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-1/2">
+                <div class=" w-full h-full flex flex-row">
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-center md:text-left md:pl-14">Tech Stack</h4>
+                        <ul class="ml-8 list-disc list-inside">
+                            <li>NodeJS</li>
+                            <li>ExpressJS</li>
+                            <li>VueJS</li>
+                            <li>MongDB</li>
+                        </ul>
+
+                    </div>
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-left">Links</h4>
+                        <!-- TODO: Make link clicks all animated and interactive.  -->
+                        <ul class=" list-inside italic">
+                            <li><a href="#">View Live Project</a></li>
+                            <li><a href="#">View Source Code</a></li>
+                            <li><a href="#">View Explanation Video</a></li>
+                            <!-- ??? I don't know what an explanation video is. I just put it there because its in the design. -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="my-3 flex-col w-full md:mx-auto md:max-w-screen-sm lg:w-96 lg:my-8 lg:mx-7 h-72 bg-white-2 border-black border-2 dark:bg-black-2 dark:border-white">
+            <div class="w-full pt-4 h-1/2 md:text-center">
+                <div class="px-6 w-full h-auto">
+                    <h4 class="font-semibold text-2xl">linktosite.com</h4>
+                </div>
+                <div class="px-6 w-full h-auto">
+                    <p class=" my-4 font-regular text-md">
+                        A web app built for a business
+                        serving the {{  niche }}.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-1/2">
+                <div class=" w-full h-full flex flex-row">
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-center md:text-left md:pl-14">Tech Stack</h4>
+                        <ul class="ml-8 list-disc list-inside">
+                            <li>NodeJS</li>
+                            <li>ExpressJS</li>
+                            <li>VueJS</li>
+                            <li>MongDB</li>
+                        </ul>
+
+                    </div>
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-left">Links</h4>
+                        <ul class=" list-inside italic">
+                            <li><a href="#">View Live Project</a></li>
+                            <li><a href="#">View Source Code</a></li>
+                            <li><a href="#">View Explanation Video</a></li>
+                            <!-- ??? I don't know what an explanation video is. I just put it there because its in the design. -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="my-3 flex-col w-full md:mx-auto md:max-w-screen-sm lg:w-96 lg:my-8 lg:mx-7 h-72 bg-white-2 border-black border-2 dark:bg-black-2 dark:border-white">
+            <div class="w-full pt-4 h-1/2 md:text-center">
+                <div class="px-6 w-full h-auto">
+                    <h4 class="font-semibold text-2xl">linktosite.com</h4>
+                </div>
+                <div class="px-6 w-full h-auto">
+                    <p class=" my-4 font-regular text-md">
+                        A web app built for a business
+                        serving the {{  niche }}.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-1/2">
+                <div class=" w-full h-full flex flex-row">
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-center md:text-left md:pl-14">Tech Stack</h4>
+                        <ul class="ml-8 list-disc list-inside">
+                            <li>NodeJS</li>
+                            <li>ExpressJS</li>
+                            <li>VueJS</li>
+                            <li>MongDB</li>
+                        </ul>
+
+                    </div>
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-left">Links</h4>
+                        <ul class=" list-inside italic">
+                            <li><a href="#">View Live Project</a></li>
+                            <li><a href="#">View Source Code</a></li>
+                            <li><a href="#">View Explanation Video</a></li>
+                            <!-- ??? I don't know what an explanation video is. I just put it there because its in the design. -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="my-3 flex-col w-full md:mx-auto md:max-w-screen-sm lg:w-96 lg:my-8 lg:mx-7 h-72 bg-white-2 border-black border-2 dark:bg-black-2 dark:border-white">
+            <div class="w-full pt-4 h-1/2 md:text-center">
+                <div class="px-6 w-full h-auto">
+                    <h4 class="font-semibold text-2xl">linktosite.com</h4>
+                </div>
+                <div class="px-6 w-full h-auto">
+                    <p class=" my-4 font-regular text-md">
+                        A web app built for a business
+                        serving the {{  niche }}.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-1/2">
+                <div class=" w-full h-full flex flex-row">
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-center md:text-left md:pl-14">Tech Stack</h4>
+                        <ul class="ml-8 list-disc list-inside">
+                            <li>NodeJS</li>
+                            <li>ExpressJS</li>
+                            <li>VueJS</li>
+                            <li>MongDB</li>
+                        </ul>
+
+                    </div>
+                    <div class="w-1/2 h-auto">
+                        <h4 class="font-bold font-sans text-left">Links</h4>
+                        <ul class=" list-inside italic">
+                            <li><a href="#">View Live Project</a></li>
+                            <li><a href="#">View Source Code</a></li>
+                            <li><a href="#">View Explanation Video</a></li>
+                            <!-- ??? I don't know what an explanation video is. I just put it there because its in the design. -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="mt-6 text-center text-2xl font-bold font-sans underline ">View all projects
+        &rarr;</h3>
+</div>
+<div id="skillset_section" class="w-full h-auto">
+    <h2 class="mt-32 mb-8 text-center font-semibold text-4xl text-black-2 dark:text-white-1">Skillset</h2>
+
+    <div class="flex px-4 flex-col  w-full h-auto">
+        <div
+            class="my-3 flex-col w-full h-auto lg:max-w-screen-md lg:mx-auto bg-white-2 border-black border-2 dark:bg-black-2 dark:border-white dark:text-white-1">
+            <div class="w-full pt-4 h-1/2 md:flex md:flex-row md:justify-center">
+                <div class="lg:w-1/2">
+                    <div class="px-6 w-full h-auto">
+                        <h4 class="font-semibold text-center text-2xl">Front End</h4>
+                    </div>
+                    <div class="px-6 w-full lg:w-64 lg:mx-auto h-auto">
+                        <ul class="my-4 font-regular text-md">
+                            <li class="list-disc list-inside">
+                                Javascript
+                            </li>
+                            <li class="list-disc list-inside">
+                                CSS
+                                <ul class="ml-4">
+                                    <li class="list-disc list-inside">TailwindCSS</li>
+                                </ul>
+                            </li>
+                            <li class="list-disc list-inside">HTML</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="px-6 w-full h-auto">
+                        <h4 class="font-semibold text-center text-2xl">Back End</h4>
+                    </div>
+                    <div class="px-6 w-full lg:w-64 lg:mx-auto h-auto">
+                        <ul class="my-4 font-regular text-md">
+                            <li class="list-disc list-inside">
+                                Javascript
+                                <ul class="ml-4">
+                                    <li class="list-disc list-inside">NodeJS</li>
+                                    <li class="list-disc list-inside">ExpressJS</li>
+                                    <li class="list-disc list-inside">VueJS</li>
+                                    <!-- Empty list is there for spacing purposes. -->
+                                </ul>
+                            </li>
+                            <li class="mt-6 list-disc list-inside">
+                                API Integration
+                                <ul class="ml-4">
+                                    <li class="list-disc list-inside">CoinMarketCap</li>
+                                    <li class="list-disc list-inside">Stripe</li>
+                                    <li class="list-disc list-inside">Ethplorer</li>
+                                </ul>
+                            </li>
+                            <li class="my-6 list-disc list-inside">
+                                MongoDB Integration
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer_section"
+    class="mt-32 w-full h-auto border-t-4 border-accent-3 lg:flex lg:justify-center lg:flex-row-reverse lg:pt-8">
+    <div id="footer_right" class="lg:w-1/2 lg:px-16 2xl:max-w-screen-md">
+        <h2 class="my-12 text-center font-semibold text-4xl text-black-2 dark:text-white-1">Contact Me</h2>
+        <div id="form_container" class="w-full h-auto">
+            <form action="/contactform" method="post" class="flex flex-col w-full h-full px-4 dark:text-black-2">
+                <label for="name" class="uppercase font-sans font-bold pb-2 text-black-2 dark:text-white-1">Name</label>
+                <input type="text" name="name" id="name_input" class="transition-all w-full h-12 rounded-lg pl-4 bg-gray-200 focus:outline-none focus:ring-2
+                focus:ring-form-outline focus:bg-white" placeholder="Abel Tesfaye" aria-required="false">
+
+                <label for="email"
+                    class="uppercase font-sans font-bold py-2 text-black-2 dark:text-white-1">Email</label>
+                <input type="email" name="email" id="email_input" class="transition-all w-full h-12 rounded-lg pl-4 bg-gray-200 focus:outline-none focus:ring-2
+                focus:ring-form-outline focus:bg-white" placeholder="zuck@facebook.com" required aria-required="true">
+
+                <label for="message"
+                    class="uppercase font-sans font-bold py-2 text-black-2 dark:text-white-1">Message</label>
+                <textarea type="text" name="message" id="message_input" class="transition-all w-full h-36 rounded-lg pl-4 pt-3 bg-gray-200 focus:outline-none focus:ring-2
+                focus:ring-form-outline focus:bg-white" placeholder="Enter your message here..." required
+                    aria-required="true"></textarea>
+                <div class="w-full h-auto mt-4">
+                    <button id="form_submit" type="submit"
+                        class="transition-all float-right w-44 h-16  bg-accent-3 text-2xl active:bg-opacity-50 text-white-1 rounded-xl">
+                        Send
+                    </button>
+                    <!-- TODO: Add ejs-flash or something to signal to the user that the message was successfully sent. -->
+                    <!-- TODO: In the near future, replace the button form submit with an axios form submission, to prevent page redirect to /contactform. -->
+                </div>
+            </form>
+        </div>
+        <div class="text-black-2 dark:text-white-1 lg:flex lg:flex-row lg:w-full  lg:mt-12 ">
+            <h3 class="mb-8 text-center font-bold font-sans text-2xl underline lg:hidden">Quick Links</h3>
+            <ul class="text-center font-semibold mb-12 text-xl lg:m-0 lg:flex lg:flex-row lg:w-full lg:justify-evenly
+                ">
+                <li class="pt-2 navListChild active:underline"><a href="#form_container"
+                        onclick="autofocusForm()">Contact</a></li>
+                <li class="pt-2 navListChild active:underline"><a href="#projects_section">Projects</a></li>
+                <li class="pt-2 navListChild active:underline"><a href="#skillset_section">Skillset</a></li>
+                <li class="pt-2 navListChild active:underline"><a href="#projects_section">Resume</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer_left" class="lg:w-1/2 lg:px-16 lg:mb-24 2xl:max-w-screen-md">
+        <div class="flex flex-col w-full mt-12 h-auto text-black-2 dark:text-white-1">
+            <h3 class="text-center font-bold font-sans text-xl lg:text-2xl lg:mb-4">Danial Hasan</h3>
+            <div class="flex flex-row justify-center w-auto h-auto">
+                <a><img class="w-11 h-11 mx-2" src="./assets/face.svg" alt="Facebook" srcset=""></a>
+                <a><img class="w-11 h-11 mx-2" src="./assets/insta.svg" alt="Instagram" srcset=""></a>
+                <a><img class="w-11 h-11 mx-2" src="./assets/tele.svg" alt="Telegram" srcset=""></a>
+                <a><img class="w-11 h-11 mx-2" src="./assets/twitter.svg" alt="Twitter" srcset=""></a>
+            </div>
+        </div>
+        <div class="flex flex-col-reverse">
+            <div class="mt-8 w-full px-4 h-auto text-black-2 dark:text-white-1">
+                <h4 class="text-left font-bold font-sans text-lg">About</h4>
+                <p class="text-left mt-2 font-normal font-sans text-lg">
+                    I first learned about web development at the age of 12, intrigued by computers.
+                    <br><br>
+                    That led me to pursue web technologies and I started freelance web development as a student
+                    throughout
+                    school.
+                    <br><br>
+                    Currently, I stay updated on web trends while pursuing topics like blockchain programming and DeFi.
+                    <br><br>
+                    <span class="text-red-400">
+                        Currently available for hire.
+                    </span>
+                </p>
+            </div>
+            <div class="my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
+                <button class="mx-auto w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
+        to-accent-1 text-2xl text-white-1 rounded-xl">
+                    Contact Me
+                </button>
+                <button class="mx-auto w-44 h-16 mt-2 lg:my-0 lg:mx-2 border-accent-1 border-2 text-2xl text-black-2 rounded-xl flex justify-center
+            items-center">
+                    <span class=" w-5 h-5 mr-2">
+                        <img id="resume_download_icon_2" src="./assets/download_light.svg" alt="Download Resume icon"
+                            srcset="">
+                    </span>
+                    <p class="text-black-2 dark:text-white-1">Resume</p>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+</footer>
