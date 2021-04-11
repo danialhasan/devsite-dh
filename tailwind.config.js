@@ -3,8 +3,8 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ['SF\\ Pro\\ Display'],
-      'serif': ['Arima\\ Madurai']
+      'sans': ['SF\\ Pro\\ Display', 'Helvetica Neue', 'sans-serif'],
+      'serif': ['Arima\\ Madurai', 'serif']
     },
     extend: {
       colors: {

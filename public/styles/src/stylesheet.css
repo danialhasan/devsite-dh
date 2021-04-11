@@ -7,7 +7,23 @@
  */
 @font-face {
     font-family: 'SF Pro Display';
-    src: url(../fonts/SF-Pro-Display-Bold.otf) format('otf');
+    src: url(../fonts/SF-Pro-Display-Regular.ttf) format('ttf');
+    /* src: url(../fonts/SF-Pro-Display-Regular.otf) format('otf'); */
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(../fonts/SF-Pro-Display-Bold.ttf) format('ttf');
+    /* src: url(../fonts/SF-Pro-Display-Bold.otf) format('otf'); */
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(../fonts/SF-Pro-Display-Semibold.ttf) format('ttf');
+    /* src: url(../fonts/SF-Pro-Display-Semibold.otf) format('otf'); */
+    font-weight: bold;
 }
 
 @font-face {
