@@ -33,3 +33,9 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap'); */
 @tailwind utilities;
+
+@layer utilities {
+    background-filter-safari {
+        filter: blur(12px);
+    }
+}

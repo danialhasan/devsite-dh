@@ -25,7 +25,9 @@ module.exports = {
     extend: {
       backgroundColor: ['active'],
       fontStyle: ['hover', 'focus', 'active'],
-      textDecoration: ['active']
+      textDecoration: ['active'],
+      margin: ['hover'],
+      padding: ['hover']
     },
   },
   plugins: [],

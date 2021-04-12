@@ -1,19 +1,26 @@
 <nav class="w-full h-auto pt-12 xl:pt-0 flex justify-between px-5">
-    <div class="xl:hidden font-bold font-sans text-lg dark:text-white-1 xl:mt-12">Danial Hasan</div>
+    <div id="logo" class=" xl:hidden font-bold font-sans text-lg dark:text-white-1 xl:mt-12">
+        <p>Danial Hasan</p>
+    </div>
     <!-- ^ 'logo' -->
     <div id="mobile_menu"
-        class="hidden z-10 fixed top-0 left-0 w-full h-full bg-white bg-opacity-10 text-black-1 dark:text-white-1"
-        style="backdrop-filter: blur(15px);" onclick="toggleMenu()">
+        class="mobile_menu hidden z-50 fixed backdrop-filter filter blur-sm backdrop-blur-sm top-0 left-0 w-full h-full bg-opacity-10 bg-black text-black-1 dark:text-white-1"
+        onclick="toggleMenu()" style="backdrop-filter: blur(15px);">
+        <!-- style="backdrop-filter: blur(15px); adds background blur to element in Chrome, not Safari.
+        filter:blur(5px); adds element blur in safari and chrome. 
+        -->
+
         <h2 class="mt-36 mb-8 font-sans text-5xl font-bold underline text-center ">Quick Links</h2>
         <ul id="mobile_menu_list" class=" text-center font-semibold mb-12 text-4xl ">
             <li class="py-2 navListChild active:underline">
-                <a href="#form_container">Contact</a>
+                <a href="#form_container" onclick="autofocusForm()">Contact</a>
             </li>
             <li class="py-2 navListChild active:underline"> <a href="#projects_section">Projects</a>
             </li>
             <li class="py-2 navListChild active:underline"><a href="#skillset_section">Skillset</a></li>
             <li class="py-2 navListChild active:underline"><a href="#projects_section">Resume</a></li>
-            <li><i id="toggle_light_settings" class="mt-2 fas fa-swatchbook" onclick="toggleLightSettings()"></i></li>
+            <li><i id="toggle_light_settings" class="mt-2 fas fa-swatchbook" onclick="toggleLightSettings()"></i>
+            </li>
         </ul>
     </div>
     <div id="desktop_menu" class="hidden xl:flex items-center px-12  w-full h-28 justify-between dark:text-white-1 ">
@@ -21,10 +28,14 @@
         <div class="flex w-auto h-full ">
             <ul class="inline-flex justify-around items-center text-lg font-bold">
 
-                <li class="ml-14"><a href="#form_container" onclick="autofocusForm()">Contact</a></li>
-                <li class="ml-14"><a href="#projects_section">Projects</a></li>
-                <li class="ml-14"><a href="#skillset_section">Skillset</a></li>
-                <li class="ml-14"><a href="#projects_section">Resume</a></li>
+                <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a href="#form_container"
+                        onclick="autofocusForm()">Contact</a></li>
+                <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#projects_section">Projects</a></li>
+                <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#skillset_section">Skillset</a></li>
+                <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#projects_section">Resume</a></li>
                 <li><i id="toggle_light_settings" class="cursor-pointer ml-14 fas fa-swatchbook fa-lg"
                         onclick="toggleLightSettings()"></i>
                 </li>
@@ -38,18 +49,19 @@
         <!-- TODO: Switch the src attr of this with the dark mode menu, when dark mode is activated. -->
     </div>
 </nav>
-<header class="text-black-2 dark:text-white-1">
-    <h1 class="font-bold font-sans text-5xl text-center mt-32 lg:text-6xl ">I'm Danial.</h1>
+<header id="header" class=" text-black-2 dark:text-white-1">
+    <h1 id="blurElement" class=" font-bold font-sans text-5xl text-center mt-32 lg:text-6xl ">
+        I'm Danial.</h1>
     <h3 class="font-bold font-sans text-2xl text-center my-5">I'm a full stack <br class="lg:hidden"> web developer.
     </h3>
 
     <div class="my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
-        <button class="mx-auto w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
-        to-accent-1 text-2xl text-white-1 rounded-xl">
+        <button class=" mx-auto w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
+        to-accent-1 text-2xl text-white-1 rounded-xl transition-all hover:-mt-1">
             Contact Me
         </button>
         <button class="mx-auto w-44 h-16 mt-2 lg:my-0 lg:mx-2 border-accent-1 border-2 text-2xl text-black-2 rounded-xl flex justify-center
-            items-center">
+            items-center transition-all hover:-mt-1">
             <span class=" w-5 h-5 mr-2">
                 <img id="resume_download_icon_1" src="./assets/download_light.svg" alt="Download Resume icon" srcset="">
             </span>
@@ -216,8 +228,8 @@
             </div>
         </div>
     </div>
-    <h3 class="mt-6 text-center text-2xl font-bold font-sans underline ">View all projects
-        &rarr;</h3>
+    <!-- <h3 class="mt-6 text-center text-2xl font-bold font-sans underline ">View all projects
+        &rarr;</h3> -->
 </div>
 <div id="skillset_section" class="w-full h-auto">
     <h2 class="mt-32 mb-8 text-center font-semibold text-4xl text-black-2 dark:text-white-1">Skillset</h2>
@@ -279,11 +291,12 @@
     </div>
 </div>
 <footer id="footer_section"
-    class="mt-32 w-full h-auto border-t-4 border-accent-3 lg:flex lg:justify-center lg:flex-row-reverse lg:pt-8">
+    class="block mt-32 w-full h-auto border-t-4 border-accent-3 lg:flex lg:justify-center lg:flex-row-reverse lg:pt-8">
     <div id="footer_right" class="lg:w-1/2 lg:px-16 2xl:max-w-screen-md">
         <h2 class="my-12 text-center font-semibold text-4xl text-black-2 dark:text-white-1">Contact Me</h2>
         <div id="form_container" class="w-full h-auto">
-            <form action="/contactform" method="post" class="flex flex-col w-full h-full px-4 dark:text-black-2">
+            <form id="contactForm" action="/contactform" method="post"
+                class="flex flex-col w-full h-full px-4 dark:text-black-2">
                 <label for="name" class="uppercase font-sans font-bold pb-2 text-black-2 dark:text-white-1">Name</label>
                 <input type="text" name="name" id="name_input" class="transition-all w-full h-12 rounded-lg pl-4 bg-gray-200 focus:outline-none focus:ring-2
                 focus:ring-form-outline focus:bg-white" placeholder="Abel Tesfaye" aria-required="false">
@@ -299,8 +312,8 @@
                 focus:ring-form-outline focus:bg-white" placeholder="Enter your message here..." required
                     aria-required="true"></textarea>
                 <div class="w-full h-auto mt-4">
-                    <button id="form_submit" type="submit"
-                        class="transition-all float-right w-44 h-16  bg-accent-3 text-2xl active:bg-opacity-50 text-white-1 rounded-xl">
+                    <button onclick="submitContactForm()" id="form_submit" type="submit" class="transition-all hover:-mt-1 hover:mb-1 float-right w-44 h-16 bg-accent-3 text-2xl
+                        active:bg-opacity-50 text-white-1 rounded-xl">
                         Send
                     </button>
                     <!-- TODO: Add ejs-flash or something to signal to the user that the message was successfully sent. -->
@@ -308,30 +321,54 @@
                 </div>
             </form>
         </div>
-        <div class="text-black-2 dark:text-white-1 lg:flex lg:flex-row lg:w-full  lg:mt-12 ">
+        <div class="hidden text-black-2 dark:text-white-1 mt-12 lg:flex lg:flex-row lg:w-full lg:mt-12 ">
             <h3 class="mb-8 text-center font-bold font-sans text-2xl underline lg:hidden">Quick Links</h3>
             <ul class="text-center font-semibold mb-12 text-xl lg:m-0 lg:flex lg:flex-row lg:w-full lg:justify-evenly
                 ">
-                <li class="pt-2 navListChild active:underline"><a href="#form_container"
-                        onclick="autofocusForm()">Contact</a></li>
-                <li class="pt-2 navListChild active:underline"><a href="#projects_section">Projects</a></li>
-                <li class="pt-2 navListChild active:underline"><a href="#skillset_section">Skillset</a></li>
-                <li class="pt-2 navListChild active:underline"><a href="#projects_section">Resume</a></li>
+                <li class="transition-all pt-2 navListChild hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#form_container" onclick="autofocusForm()">Contact</a></li>
+                <li class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#projects_section">Projects</a></li>
+                <li class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#skillset_section">Skillset</a></li>
+                <li class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline"><a
+                        href="#projects_section">Resume</a></li>
             </ul>
         </div>
     </div>
     <div id="footer_left" class="lg:w-1/2 lg:px-16 lg:mb-24 2xl:max-w-screen-md">
-        <div class="flex flex-col w-full mt-12 h-auto text-black-2 dark:text-white-1">
-            <h3 class="text-center font-bold font-sans text-xl lg:text-2xl lg:mb-4">Danial Hasan</h3>
+        <div class="flex flex-col w-full mt-24 h-auto text-black-2 dark:text-white-1">
+            <h3 class="mb-8 text-center font-bold font-sans text-xl lg:text-2xl lg:mb-4">Danial Hasan</h3>
             <div class="flex flex-row justify-center w-auto h-auto">
-                <a><img class="w-11 h-11 mx-2" src="./assets/face.svg" alt="Facebook" srcset=""></a>
-                <a><img class="w-11 h-11 mx-2" src="./assets/insta.svg" alt="Instagram" srcset=""></a>
-                <a><img class="w-11 h-11 mx-2" src="./assets/linkedin.png" alt="LinkedIn" srcset=""></a>
-                <a><img class="w-11 h-11 mx-2" src="./assets/twitter.svg" alt="Twitter" srcset=""></a>
+                <a href="https://www.instagram.com/danialhasan752"><img class="w-11 h-11 mx-2" src="./assets/insta.svg"
+                        alt="Instagram" srcset=""></a>
+                <a href="https://www.linkedin.com/in/danial-hasan-0bb166182/"><img class="w-11 h-11 mx-2"
+                        src="./assets/linkedin.png" alt="LinkedIn" srcset=""></a>
+                <a href="https://www.twitter.com/dhasandev"><img class="w-11 h-11 mx-2" src="./assets/twitter.svg"
+                        alt="Twitter" srcset=""></a>
             </div>
         </div>
-        <div class="flex flex-col-reverse">
-            <div class="mt-8 w-full px-4 h-auto text-black-2 dark:text-white-1">
+        <!-- the order in 'order-first/last' is reversed since the container has flex-col-reverse applied to it. -->
+        <div class="order-first flex flex-col-reverse">
+            <div class="text-black-2 dark:text-white-1 mt-12 lg:hidden ">
+                <h3 class="mb-8 text-center font-bold font-sans text-2xl underline lg:hidden">Quick Links</h3>
+                <ul class="text-center font-semibold mb-12 text-xl lg:m-0 lg:flex lg:flex-row lg:w-full lg:justify-evenly
+                ">
+                    <li
+                        class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline ">
+                        <a href="#form_container" onclick="autofocusForm()">Contact</a></li>
+                    <li
+                        class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline">
+                        <a href="#projects_section">Projects</a></li>
+                    <li
+                        class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline">
+                        <a href="#skillset_section">Skillset</a></li>
+                    <li
+                        class="pt-2 navListChild active:underline hover:text-black dark:hover:text-white hover:underline">
+                        <a href="#projects_section">Resume</a></li>
+                </ul>
+            </div>
+            <div class="order-last mt-8 w-full px-4 h-auto text-black-2 dark:text-white-1">
                 <h4 class="text-left font-bold font-sans text-lg">About</h4>
                 <p class="text-left mt-2 font-normal font-sans text-lg">
                     I first learned about web development at the age of 12, intrigued by computers.
@@ -347,13 +384,13 @@
                     </span>
                 </p>
             </div>
-            <div class="my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
+            <div class=" my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
                 <button class="mx-auto w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
-        to-accent-1 text-2xl text-white-1 rounded-xl">
+        to-accent-1 text-2xl text-white-1 rounded-xl transition-all hover:-mt-1">
                     Contact Me
                 </button>
                 <button class="mx-auto w-44 h-16 mt-2 lg:my-0 lg:mx-2 border-accent-1 border-2 text-2xl text-black-2 rounded-xl flex justify-center
-            items-center">
+            items-center transition-all hover:-mt-1">
                     <span class=" w-5 h-5 mr-2">
                         <img id="resume_download_icon_2" src="./assets/download_light.svg" alt="Download Resume icon"
                             srcset="">
@@ -362,8 +399,5 @@
                 </button>
             </div>
         </div>
-
     </div>
-
-
 </footer>
