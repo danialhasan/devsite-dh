@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       'views/layout.ejs',
       './views/index.ejs',
@@ -25,6 +25,9 @@ module.exports = {
         'accent-3': '#7E63FF',
         'accent-4': '#F56565',
         'form-outline': '#41B4E6'
+      },
+      minHeight: {
+        '72': '18rem'
       }
     },
   },
