@@ -1,12 +1,5 @@
 module.exports = {
-  purge: {
-    enabled: false,
-    content: [
-      'views/layout.ejs',
-      './views/index.ejs',
-      'views/404.ejs'
-    ]
-  },
+  purge: ['./views/*.ejs'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -31,14 +24,4 @@ module.exports = {
       }
     },
   },
-  variants: {
-    extend: {
-      backgroundColor: ['active'],
-      fontStyle: ['hover', 'focus', 'active'],
-      textDecoration: ['active'],
-      margin: ['hover'],
-      padding: ['hover']
-    },
-  },
-  plugins: [],
 }

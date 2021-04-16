@@ -1,9 +1,8 @@
 /**
  * TODO
  * [] Submit contact form with Axios/Fetch API 
- * [] Animate buttons and links on hover
- * [] Animate buttons on click
- * [] Add detailed Projects page view 
+ * [x] Animate buttons and links on hover
+ * [x] Animate buttons on click
  */
 
 let devMode = true;
@@ -105,6 +104,9 @@ function toggleLightSettings() {
 
 //     console.log('Scrolled projects into view');
 // })
+
+const form = document.getElementById('contactForm');
+
 
 function submitContactForm() {
 
