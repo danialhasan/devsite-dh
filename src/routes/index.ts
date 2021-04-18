@@ -14,6 +14,16 @@ const emailPassword = process.env.EMAIL_PASSWORD;
 router.get('/', (req: Request, res: any) => {
     res.render('index');
 })
+
+router.get('/robots.txt', function (req:Request, res:any) {
+    res.type('text/plain');
+    res.send("User-agent: *\nAllow: /");
+});
+
+router.get('/sitemap.xml', function (req:Request, res:any) {
+  res.sendFile(path.resolve('public/assets/sitemap.xml'));
+});
+
 router.post('/contactform', async (req:any, res: any) => {
   console.log("Message Received!")
   let name = req.body.name;
