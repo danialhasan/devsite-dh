@@ -15,6 +15,9 @@ router.get('/', (req: Request, res: any) => {
     res.render('index');
 })
 
+router.get('/testApi', (req: Request, res: any) => {
+  res.send('Request received!')
+})
 router.get('/robots.txt', function (req:Request, res:any) {
     res.type('text/plain');
     res.send("User-agent: *\nAllow: /");
