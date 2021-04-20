@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;" class="">
+<!-- <html> class is 'dark' for dark mode to activate -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/dist/tailwind.css">
+    <script src="./scripts/script.js" defer></script>
+    <base href="#" class="cursor-pointer" rel="noreferrer">
+
+    <!-- Primary Meta Tags -->
+    <title>Danial Hasan - Portfolio</title>
+    <meta name="title" content="Danial Hasan - Portfolio">
+    <meta name="description"
+        content="Danial Hasan is a full stack web developer who builds web applications with Node.js, styles them with TailwindCSS and makes them dynamic with Javascript. ">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hasandev.ca/">
+    <meta property="og:title" content="Danial Hasan - Portfolio">
+    <meta property="og:description"
+        content="Danial Hasan is a full stack web developer who builds web applications with Node.js, styles them with TailwindCSS and makes them dynamic with Javascript. ">
+    <meta property="og:image" content="./assets/metaimage_v1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.hasandev.ca/">
+    <meta property="twitter:title" content="Danial Hasan - Portfolio">
+    <meta property="twitter:description"
+        content="Danial Hasan is a full stack web developer who builds web applications with Node.js, styles them with TailwindCSS and makes them dynamic with Javascript. ">
+    <meta property="twitter:image" content="./assets/metaimage_v1.jpg">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="bg-white-1 dark:bg-black-1">
+    <nav class="w-full h-auto pt-12 xl:pt-0 flex justify-between px-5">
+        <div id="logo" class=" xl:hidden font-bold font-sans text-lg dark:text-white-1 xl:mt-12">
+            <p>Danial Hasan</p>
+        </div>
+        <!-- ^ 'logo' -->
+        <div id="mobile_menu"
+            class="mobile_menu hidden z-50 fixed backdrop-filter filter blur-sm backdrop-blur-sm top-0 left-0 w-full h-full bg-opacity-10 bg-black text-black-1 dark:text-white-1"
+            onclick="toggleMenu()" style="backdrop-filter: blur(15px);">
+            <!-- style="backdrop-filter: blur(15px); adds background blur to element in Chrome, not Safari.
+        filter:blur(5px); adds element blur in safari and chrome. 
+        -->
+
+            <h2 class="mt-36 mb-8 font-sans text-5xl font-bold underline text-center ">Quick Links</h2>
+            <ul id="mobile_menu_list" class=" text-center font-semibold mb-12 text-4xl ">
+                <li class="py-2 navListChild active:underline">
+                    <a href="#form_container" onclick="autofocusForm()">Contact</a>
+                </li>
+                <li class="py-2 navListChild active:underline"> <a href="#projects_section">Projects</a>
+                </li>
+                <li class="py-2 navListChild active:underline"><a href="#skillset_section">Skillset</a></li>
+                <li class="py-2 navListChild active:underline"><a href="#projects_section">Resume</a></li>
+                <li><i id="toggle_light_settings" class="mt-2 fas fa-swatchbook" onclick="toggleLightSettings()"></i>
+                </li>
+            </ul>
+        </div>
+        <div id="desktop_menu"
+            class="hidden xl:flex items-center px-12  w-full h-28 justify-between dark:text-white-1 ">
+            <div class="font-bold font-sans text-lg "><a href="#">Danial Hasan</a></div>
+            <div class="flex w-auto h-full ">
+                <ul class="inline-flex justify-around items-center text-lg font-bold">
+
+                    <!-- TODO: ONCE DEPLOYED, MAKE THESE LINKS REDIRECT HOME TO THEIR SPECIFIED ELEMENTS. -->
+                    <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a href="/#form_container"
+                            onclick="autofocusForm()">Contact</a></li>
+                    <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                            href="/#projects_section">Projects</a></li>
+                    <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                            href="/#skillset_section">Skillset</a></li>
+                    <li class="ml-14 hover:text-black dark:hover:text-white hover:underline"><a
+                            href="/#projects_section">Resume</a></li>
+                    <li><i id="toggle_light_settings" class="cursor-pointer ml-14 fas fa-swatchbook fa-lg"
+                            onclick="toggleLightSettings()"></i>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="xl:hidden transform transition-all z-50 ">
+            <img id="menu_button" aria-label="menu" src="./assets/menu_dark.svg" alt="Menu Button"
+                onclick="toggleMenu()">
+            <!-- TODO: Switch the src attr of this with the dark mode menu, when dark mode is activated. -->
+        </div>
+    </nav>
+
+    <header id="header" class=" text-black-2 dark:text-white-1">
+        <h1 id="blurElement" class=" font-bold font-sans text-5xl text-center mt-32 lg:text-6xl ">
+            Error 404.</h1>
+        <h3 class="font-bold font-sans text-2xl text-center my-5">The page you are <br class="lg:hidden"> looking for,
+            doesn't exist.
+        </h3>
+
+        <div class="my-12 w-full h-auto flex justify-center flex-col lg:flex-row">
+            <a class="mx-auto" href="/">
+                <button class="  w-44 h-16 lg:my-0 lg:mx-2 text-center bg-gradient-to-r from-accent-2 
+        to-accent-1 text-2xl text-white-1 rounded-xl transition-all hover:-mt-1">
+                    Go Home
+                </button>
+            </a>
+        </div>
+    </header>
+</body>
+
+</html>
