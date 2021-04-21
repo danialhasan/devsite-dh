@@ -5,6 +5,16 @@
  * [x] Animate buttons on click
  */
 
+function navigate(nav, target) {
+    if (target !== '_blank') {
+        window.location.href = `/${nav}`;
+        nameInput.focus()
+    } else {
+        window.open(nav, target);
+    }
+}
+
+
 let devMode = true;
 
 const nameInput = document.getElementById('name_input');
