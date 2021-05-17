@@ -13,8 +13,9 @@ app.use(expressLayouts);
  * request data middleware. this piece of important middleware 
  * lets us output the body of a post request. crucial for nodemailer functionality.
  */
-app.use(bodyParser.urlencoded({ extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 
 app.use(express.static("public"));
 //routes

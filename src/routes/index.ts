@@ -1,111 +1,116 @@
 export { }
 const express = require('express');
 const router = express.Router();
+import { RequestHandler } from "express";
+import { adexchangebuyer_v1_2 } from "googleapis";
 import path from "path";
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
 require("dotenv").config({ path: 'config/.env' });
-// 
 const email = process.env.EMAIL;
 const emailPassword = process.env.EMAIL_PASSWORD;
 
 router.get('/', (req: Request, res: any) => {
-    res.render('index');
+  res.render('index');
 })
 
 router.get('/testApi', (req: Request, res: any) => {
   res.send('Request received!')
 })
-router.get('/robots.txt', function (req:Request, res:any) {
-    res.type('text/plain');
-    res.send("User-agent: *\nAllow: /");
+router.get('/robots.txt', function (req: Request, res: any) {
+  res.type('text/plain');
+  res.send("User-agent: *\nAllow: /");
 });
 
-router.get('/sitemap.xml', function (req:Request, res:any) {
+router.get('/sitemap.xml', (req: Request, res: any) => {
   res.sendFile(path.resolve('public/assets/sitemap.xml'));
 });
 
-router.post('/contactform', async (req:any, res: any) => {
+router.get('/page_portfolio', (req: Request, res: any) => {
+  res.sendFile(path.resolve('views/infopages/portfoliosite_info.ejs'))
+})
+
+router.post('/contactform', async (req: any, res: any) => {
   console.log("Message Received!")
   let name = req.body.name;
   let email = req.body.email;
   let message = req.body.message;
   const createTransporter = async () => {
-  const oauth2Client = new OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    "https://developers.google.com/oauthplayground"
-  );
+    const oauth2Client = new OAuth2(
+      process.env.CLIENT_ID,
+      process.env.CLIENT_SECRET,
+      "https://developers.google.com/oauthplayground"
+    );
 
-  oauth2Client.setCredentials({
-    refresh_token: process.env.REFRESH_TOKEN
-  });
-
-  const accessToken = await new Promise((resolve, reject) => {
-    oauth2Client.getAccessToken((err:Error, token:any) => {
-      if (err) {
-        reject();
-      }
-      resolve(token);
+    oauth2Client.setCredentials({
+      refresh_token: process.env.REFRESH_TOKEN
     });
-  });
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      type: "OAuth2",
-      user: process.env.EMAIL,
-      accessToken,
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN
-    }
-  });
+    const accessToken = await new Promise((resolve, reject) => {
+      oauth2Client.getAccessToken((err: Error, token: any) => {
+        if (err) {
+          reject();
+        }
+        resolve(token);
+      });
+    });
 
-  return transporter;
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: process.env.EMAIL,
+        accessToken,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN
+      }
+    });
+
+    return transporter;
   };
-    
-  const sendEmail = async (emailOptions:any) => {
-      let emailTransporter = await createTransporter();
-      await emailTransporter.sendMail(emailOptions);
+
+  const sendEmail = async (emailOptions: any) => {
+    let emailTransporter = await createTransporter();
+    await emailTransporter.sendMail(emailOptions);
   };
 
   sendEmail({
-      subject: "DevSite - New Message",
-      text: message,
-      to: "danialhasan14@gmail.com",
-      from: email
+    subject: "DevSite - New Message",
+    text: message,
+    to: "danialhasan14@gmail.com",
+    from: email
   }
   );
   res.status(200);
   res.render('index')
   console.log("message sent")
 
-    // var transporter = nodemailer.createTransport({
-    //     service:'gmail',
-    //     auth: {
-    //         user: email,
-    //         pass: emailPassword
-    //     }
-    // });
+  // var transporter = nodemailer.createTransport({
+  //     service:'gmail',
+  //     auth: {
+  //         user: email,
+  //         pass: emailPassword
+  //     }
+  // });
 
-    // var mailOptions = {
-    // from: 'testemail@gmail.com',
-    // to: 'danialhasan14@gmail.com',
-    // subject: 'Sending Email using Node.js',
-    // text: 'That was easy!'
-    // };
+  // var mailOptions = {
+  // from: 'testemail@gmail.com',
+  // to: 'danialhasan14@gmail.com',
+  // subject: 'Sending Email using Node.js',
+  // text: 'That was easy!'
+  // };
 
-    // transporter.sendMail(mailOptions, function(error:Error, info:any){
-    //     if (error) {
-    //         console.log(error);
-    //     } else {
-    //         console.log('Email sent: ' + info.response);
-    //     }
-    // });
-    // res.send('Message sent!')
+  // transporter.sendMail(mailOptions, function(error:Error, info:any){
+  //     if (error) {
+  //         console.log(error);
+  //     } else {
+  //         console.log('Email sent: ' + info.response);
+  //     }
+  // });
+  // res.send('Message sent!')
 })
 
 module.exports = router;

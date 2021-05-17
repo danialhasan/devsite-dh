@@ -4,6 +4,26 @@
  * [x] Animate buttons and links on hover
  * [x] Animate buttons on click
  */
+function navigate(nav, target) {
+    if (target !== '_blank') {
+        window.location.href = `/${nav}`;
+        nameInput.focus()
+    } else {
+        window.open(nav, target);
+    }
+}
+
+async function navigateNewPage(page, target) {
+    /**
+     * Sends a request to the server to serve the specified page. 
+     * This will be defunct in the netlify version, its just to develop the 
+     * pages on the node version. In the netlify version i'll just use anchor tags 
+     * or window.location.href to navigate to the specifed page. 
+     */
+
+    fetch('/page_portfolio')
+        .then(res => console.log(res))
+}
 
 let devMode = true;
 
@@ -104,10 +124,3 @@ function toggleLightSettings() {
 
 //     console.log('Scrolled projects into view');
 // })
-
-const form = document.getElementById('contactForm');
-
-
-function submitContactForm() {
-
-}
